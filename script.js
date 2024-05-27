@@ -1,79 +1,98 @@
 const quizData = [
     {
-        question: "What is the speed of light?",
-        a: "300,000 km/s",
-        b: "150,000 km/s",
-        c: "299,792 km/s",
-        d: "3,000 km/s",
-        correct: "c"
+        question: "Если птица сядет на оголённый провод, почему её не ударит током?",
+        options: [
+            "Разность потенциалов между лапами птиц слишком мала для протекания заметного тока",
+            "Все провода, на которые садятся птицы, покрыты слоем изоляции",
+            "Птицы — это не живые существа, а дроны теневого правительства, они подзаряжаются, сидя на проводах"
+        ],
+        correct: 0,
+        explanation: "Разность потенциалов между лапами птиц слишком мала для протекания заметного тока."
     },
     {
-        question: "Who is known as the father of physics?",
-        a: "Isaac Newton",
-        b: "Albert Einstein",
-        c: "Galileo Galilei",
-        d: "Nikola Tesla",
-        correct: "c"
-    },
-    // Add more questions as needed
+        question: "Если гравитационные волны влияют на размер всех тел, то они должны растягивать и длины электромагнитных волн. Как тогда возможно зарегистрировать гравитационную волну с помощью оптического интерферометра?",
+        options: [
+            "Оптическим интерферометром невозможно поймать гравитационную волну",
+            "Свет в принципе не взаимодействует с гравитационными волнами",
+            "Принцип работы гравитационных антенн делает их не чувствительными к растяжению света гравитационными волнами"
+        ],
+        correct: 2,
+        explanation: "Принцип работы гравитационных антенн делает их не чувствительными к растяжению света гравитационными волнами."
+    }
+    // Add more questions here
 ];
 
-const quiz = document.getElementById('quiz');
-const answerEls = document.querySelectorAll('.answer');
-const questionEl = document.getElementById('question');
-const a_text = document.getElementById('a_text');
-const b_text = document.getElementById('b_text');
-const c_text = document.getElementById('c_text');
-const d_text = document.getElementById('d_text');
-const submitBtn = document.getElementById('submit');
+let currentQuestion = 0;
+let userAnswers = [];
 
-let currentQuiz = 0;
-let score = 0;
+function loadQuestion(index) {
+    const quizContainer = document.getElementById('quiz');
+    quizContainer.innerHTML = '';
 
-loadQuiz();
+    const questionElement = document.createElement('div');
+    questionElement.classList.add('question');
+    questionElement.innerText = quizData[index].question;
+    quizContainer.appendChild(questionElement);
 
-function loadQuiz() {
-    deselectAnswers();
+    const optionsElement = document.createElement('ul');
+    optionsElement.classList.add('options');
 
-    const currentQuizData = quizData[currentQuiz];
+    quizData[index].options.forEach((option, i) => {
+        const optionItem = document.createElement('li');
+        const optionInput = document.createElement('input');
+        optionInput.type = 'radio';
+        optionInput.name = 'option';
+        optionInput.value = i;
+        optionInput.id = `option${i}`;
+        optionInput.disabled = userAnswers[index] !== undefined;
 
-    questionEl.innerText = currentQuizData.question;
-    a_text.innerText = currentQuizData.a;
-    b_text.innerText = currentQuizData.b;
-    c_text.innerText = currentQuizData.c;
-    d_text.innerText = currentQuizData.d;
-}
-
-function deselectAnswers() {
-    answerEls.forEach(answerEl => answerEl.checked = false);
-}
-
-function getSelected() {
-    let answer;
-    answerEls.forEach(answerEl => {
-        if(answerEl.checked) {
-            answer = answerEl.id;
+        if (userAnswers[index] === i) {
+            optionInput.checked = true;
         }
+
+        const optionLabel = document.createElement('label');
+        optionLabel.htmlFor = `option${i}`;
+        optionLabel.innerText = option;
+
+        optionItem.appendChild(optionInput);
+        optionItem.appendChild(optionLabel);
+        optionsElement.appendChild(optionItem);
     });
-    return answer;
+
+    quizContainer.appendChild(optionsElement);
+
+    const explanationElement = document.createElement('div');
+    explanationElement.classList.add('explanation');
+    explanationElement.innerText = quizData[index].explanation;
+    quizContainer.appendChild(explanationElement);
+
+    if (userAnswers[index] !== undefined) {
+        quizContainer.classList.add('answered');
+    } else {
+        quizContainer.classList.remove('answered');
+    }
+
+    optionsElement.addEventListener('change', (e) => {
+        userAnswers[index] = parseInt(e.target.value);
+        explanationElement.style.display = 'block';
+        quizContainer.classList.add('answered');
+    });
 }
 
-submitBtn.addEventListener('click', () => {
-    const answer = getSelected();
-    if(answer) {
-        if(answer === quizData[currentQuiz].correct) {
-            score++;
-        }
-
-        currentQuiz++;
-
-        if(currentQuiz < quizData.length) {
-            loadQuiz();
-        } else {
-            quiz.innerHTML = `
-           <h2>You answered ${score}/${quizData.length} questions correctly</h2>
-           <button onclick="location.reload()">Reload</button>
-           `;
-        }
+function nextQuestion() {
+    if (currentQuestion < quizData.length - 1) {
+        currentQuestion++;
+        loadQuestion(currentQuestion);
     }
+}
+
+function prevQuestion() {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion(currentQuestion);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadQuestion(currentQuestion);
 });
