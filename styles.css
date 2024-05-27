@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Charter, "Times New Roman", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
     background-color: #f9f9f9;
     margin: 0;
     padding: 0;
@@ -18,6 +18,10 @@ body {
 .question {
     font-size: 20px;
     margin-bottom: 20px;
+}
+
+#quiz > img {
+    width: 100%;
 }
 
 .options {
@@ -40,11 +44,11 @@ body {
 }
 
 .correct {
-    color: green;
+    color: #007247;
 }
 
 .incorrect {
-    color: red;
+    color: #ff0000;
 }
 
 .answered .explanation {
