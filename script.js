@@ -190,7 +190,7 @@ function showResults() {
     const score = userAnswers.filter((answer, index) => answer === quizData[index].correct).length;
 
     const resultImage = document.createElement('img');
-    resultImage.src = 'result_image.jpg'; // Replace with actual result image path
+    resultImage.src = 'result_image.mp4'; // Replace with actual result image path
     quizContainer.appendChild(resultImage);
 
     const scoreElement = document.createElement('div');
