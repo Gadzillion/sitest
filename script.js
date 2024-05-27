@@ -136,9 +136,9 @@ function loadQuestion(index) {
     }
 
     document.getElementById('prev-btn').disabled = index === 0;
-    document.getElementById('next-btn').disabled = index === quizData.length - 1;
-    document.getElementById('next-btn').style.display = userAnswers[index] !== undefined ? 'block' : 'none';
+    document.getElementById('next-btn').style.display = userAnswers[index] !== undefined && index < quizData.length - 1 ? 'block' : 'none';
     document.getElementById('submit-btn').style.display = userAnswers[index] === undefined ? 'block' : 'none';
+    document.getElementById('results-btn').style.display = index === quizData.length - 1 && userAnswers[index] !== undefined ? 'block' : 'none';
 }
 
 function submitAnswer() {
@@ -150,17 +150,22 @@ function submitAnswer() {
         displayAnswerFeedback(currentQuestionIndex);
         document.getElementById('next-btn').style.display = 'block';
         document.getElementById('submit-btn').style.display = 'none';
+        if (currentQuestionIndex === quizData.length - 1) {
+            document.getElementById('results-btn').style.display = 'block';
+        }
     }
 }
 
 function displayAnswerFeedback(index) {
-    const options = document.querySelectorAll('.options input');
-    options.forEach(option => {
-        const optionValue = parseInt(option.value);
-        if (optionValue === quizData[index].correct) {
-            option.nextElementSibling.classList.add('correct');
-        } else if (optionValue === userAnswers[index]) {
-            option.nextElementSibling.classList.add('incorrect');
+    const selectedOption = userAnswers[index];
+    const correctOption = quizData[index].correct;
+    const options = document.querySelectorAll('.options li');
+
+    options.forEach((option, i) => {
+        if (i === correctOption) {
+            option.querySelector('label').classList.add('correct');
+        } else if (i === selectedOption) {
+            option.querySelector('label').classList.add('incorrect');
         }
     });
 }
@@ -169,8 +174,6 @@ function nextQuestion() {
     if (currentQuestionIndex < quizData.length - 1) {
         currentQuestionIndex++;
         loadQuestion(currentQuestionIndex);
-    } else {
-        showResults();
     }
 }
 
