@@ -1,7 +1,7 @@
 const quizData = [
     {
         question: "Если птица сядет на оголённый провод, почему её не ударит током?",
-        image: "image1.jpg",
+        image: "images/image1.jpg",
         options: [
             "Разность потенциалов между лапами птиц слишком мала для протекания заметного тока",
             "Все провода, на которые садятся птицы, покрыты слоем изоляции",
@@ -12,7 +12,7 @@ const quizData = [
     },
     {
         question: "Если гравитационные волны влияют на размер всех тел, то они должны растягивать и длины электромагнитных волн. Как тогда возможно зарегистрировать гравитационную волну с помощью оптического интерферометра?",
-        image: "image2.jpg",
+        image: "images/image2.jpg",
         options: [
             "Оптическим интерферометром невозможно поймать гравитационную волну",
             "Свет в принципе не взаимодействует с гравитационными волнами",
@@ -24,56 +24,56 @@ const quizData = [
     // Add more questions here, total 10 questions
     {
         question: "Third question example?",
-        image: "image3.jpg",
+        image: "images/image3.jpg",
         options: ["Option 1", "Option 2", "Option 3"],
         correct: 0,
         explanation: "Explanation for third question."
     },
     {
         question: "Fourth question example?",
-        image: "image4.jpg",
+        image: "images/image4.jpg",
         options: ["Option 1", "Option 2", "Option 3"],
         correct: 1,
         explanation: "Explanation for fourth question."
     },
     {
         question: "Fifth question example?",
-        image: "image5.jpg",
+        image: "images/image5.jpg",
         options: ["Option 1", "Option 2", "Option 3"],
         correct: 2,
         explanation: "Explanation for fifth question."
     },
     {
         question: "Sixth question example?",
-        image: "image6.jpg",
+        image: "images/image6.jpg",
         options: ["Option 1", "Option 2", "Option 3"],
         correct: 0,
         explanation: "Explanation for sixth question."
     },
     {
         question: "Seventh question example?",
-        image: "image7.jpg",
+        image: "images/image7.jpg",
         options: ["Option 1", "Option 2", "Option 3"],
         correct: 1,
         explanation: "Explanation for seventh question."
     },
     {
         question: "Eighth question example?",
-        image: "image8.jpg",
+        image: "images/image8.jpg",
         options: ["Option 1", "Option 2", "Option 3"],
         correct: 2,
         explanation: "Explanation for eighth question."
     },
     {
         question: "Ninth question example?",
-        image: "image9.jpg",
+        image: "images/image9.jpg",
         options: ["Option 1", "Option 2", "Option 3"],
         correct: 0,
         explanation: "Explanation for ninth question."
     },
     {
         question: "Tenth question example?",
-        image: "image10.jpg",
+        image: "images/image10.jpg",
         options: ["Option 1", "Option 2", "Option 3"],
         correct: 1,
         explanation: "Explanation for tenth question."
