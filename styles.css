@@ -6,7 +6,7 @@ body {
 }
 
 .quiz-container {
-    width: 80%;
+    width: 50%;
     max-width: 100%;
     height: auto;
     margin: 50px auto;
@@ -16,12 +16,21 @@ body {
 }
 
 .question {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-family: Graphik, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    font-size: 23px;
+    line-height: 30px;
 }
 
-#quiz > img {
+.options li label {
+    font-family: Arial, sans-serif;
+}
+
+img {
     width: 100%;
+    max-width: 50%;
 }
 
 .options {
@@ -53,6 +62,12 @@ body {
 
 .answered .explanation {
     display: block;
+    font-family: Charter, "Times New Roman", "Apple Color Emoji", "Noto Color Emoji", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    font-size: 21px;
+    line-height: 30px;
 }
 
 .navigation-buttons {
@@ -77,24 +92,44 @@ body {
     text-align: center;
 }
 
-.results img {
-    max-width: 100%;
-}
-
 .results .score {
     font-size: 24px;
     margin: 20px 0;
+}
+
+.score {
+    font-family: Graphik, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 35px;
+    margin: 30px 0 35px;
 }
 
 .results .joke {
     font-size: 18px;
 }
 
-.results .restart-btn {
-    padding: 10px 20px;
-    border: none;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 5px;
+.joke {
+    font-family: Graphik, sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 35px;
+    margin: 30px 0 35px;
+}
+
+button {
+    background-color: rgb(247, 247, 247);
+    font-family: Graphik, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*color: white;*/
     cursor: pointer;
+    display: none;
+    height: 45px;
+    padding: 12px 19px 14px 18px;
+    border-radius: 2px;
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0;
+    font-weight: 600;
+    margin: 20px 0 0;
+    border: 1px solid rgba(0,0,0,.25)
 }

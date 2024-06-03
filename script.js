@@ -21,63 +21,62 @@ const quizData = [
         correct: 2,
         explanation: "Принцип работы гравитационных антенн делает их не чувствительными к растяжению света гравитационными волнами."
     },
-    // Add more questions here, total 10 questions
-    {
-        question: "Third question example?",
-        image: "images/image3.jpg",
-        options: ["Option 1", "Option 2", "Option 3"],
-        correct: 0,
-        explanation: "Explanation for third question."
-    },
-    {
-        question: "Fourth question example?",
-        image: "images/image4.jpg",
-        options: ["Option 1", "Option 2", "Option 3"],
-        correct: 1,
-        explanation: "Explanation for fourth question."
-    },
-    {
-        question: "Fifth question example?",
-        image: "images/image5.jpg",
-        options: ["Option 1", "Option 2", "Option 3"],
-        correct: 2,
-        explanation: "Explanation for fifth question."
-    },
-    {
-        question: "Sixth question example?",
-        image: "images/image6.jpg",
-        options: ["Option 1", "Option 2", "Option 3"],
-        correct: 0,
-        explanation: "Explanation for sixth question."
-    },
-    {
-        question: "Seventh question example?",
-        image: "images/image7.jpg",
-        options: ["Option 1", "Option 2", "Option 3"],
-        correct: 1,
-        explanation: "Explanation for seventh question."
-    },
-    {
-        question: "Eighth question example?",
-        image: "images/image8.jpg",
-        options: ["Option 1", "Option 2", "Option 3"],
-        correct: 2,
-        explanation: "Explanation for eighth question."
-    },
-    {
-        question: "Ninth question example?",
-        image: "images/image9.jpg",
-        options: ["Option 1", "Option 2", "Option 3"],
-        correct: 0,
-        explanation: "Explanation for ninth question."
-    },
-    {
-        question: "Tenth question example?",
-        image: "images/image10.jpg",
-        options: ["Option 1", "Option 2", "Option 3"],
-        correct: 1,
-        explanation: "Explanation for tenth question."
-    }
+    // {
+    //     question: "Third question example?",
+    //     image: "images/image3.jpg",
+    //     options: ["Option 1", "Option 2", "Option 3"],
+    //     correct: 0,
+    //     explanation: "Explanation for third question."
+    // },
+    // {
+    //     question: "Fourth question example?",
+    //     image: "images/image4.jpg",
+    //     options: ["Option 1", "Option 2", "Option 3"],
+    //     correct: 1,
+    //     explanation: "Explanation for fourth question."
+    // },
+    // {
+    //     question: "Fifth question example?",
+    //     image: "images/image5.jpg",
+    //     options: ["Option 1", "Option 2", "Option 3"],
+    //     correct: 2,
+    //     explanation: "Explanation for fifth question."
+    // },
+    // {
+    //     question: "Sixth question example?",
+    //     image: "images/image6.jpg",
+    //     options: ["Option 1", "Option 2", "Option 3"],
+    //     correct: 0,
+    //     explanation: "Explanation for sixth question."
+    // },
+    // {
+    //     question: "Seventh question example?",
+    //     image: "images/image7.jpg",
+    //     options: ["Option 1", "Option 2", "Option 3"],
+    //     correct: 1,
+    //     explanation: "Explanation for seventh question."
+    // },
+    // {
+    //     question: "Eighth question example?",
+    //     image: "images/image8.jpg",
+    //     options: ["Option 1", "Option 2", "Option 3"],
+    //     correct: 2,
+    //     explanation: "Explanation for eighth question."
+    // },
+    // {
+    //     question: "Ninth question example?",
+    //     image: "images/image9.jpg",
+    //     options: ["Option 1", "Option 2", "Option 3"],
+    //     correct: 0,
+    //     explanation: "Explanation for ninth question."
+    // },
+    // {
+    //     question: "Tenth question example?",
+    //     image: "images/image10.jpg",
+    //     options: ["Option 1", "Option 2", "Option 3"],
+    //     correct: 1,
+    //     explanation: "Explanation for tenth question."
+    // }
 ];
 
 let currentQuestionIndex = 0;
